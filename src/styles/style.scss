@@ -1,0 +1,23 @@
+// Colores personalizados
+$primary: #355238;
+$secondary: #F2A65A;
+$dark: #223524;
+$light: #F8F9FA;
+
+// Importar Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+.player-wind {
+    width: 70%;
+}
+@media (max-width: 767px) {
+    .player-wind {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .player-wind {
+        width: 40%;
+    }
+}

@@ -8,16 +8,22 @@ $light: #F8F9FA;
 @import "bootstrap/scss/bootstrap";
 
 .player-wind {
-    width: 70%;
+    width: 50%;
 }
-@media (max-width: 767px) {
+
+.round-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
     .player-wind {
-        width: 50%;
+        width: 40%;
     }
 }
 
 @media (max-width: 576px) {
     .player-wind {
-        width: 40%;
+        width: 50%;
     }
 }

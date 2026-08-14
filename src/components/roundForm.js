@@ -1,4 +1,8 @@
 export function renderRoundForm(players) {
+    const options = players
+    .map(player => `<option>${player}</option>`)
+    .join('');
+
     return `
         <div class="container round-form">
             <div class="row g-2 mt-3">
@@ -6,10 +10,7 @@ export function renderRoundForm(players) {
                     <label class="form-label">Winner</label>
                     <select class="form-select">
                         <option selected>Select winner</option>
-                        <option>${players[0]}</option>
-                        <option>${players[1]}</option>
-                        <option>${players[2]}</option>
-                        <option>${players[3]}</option>
+                        ${options}
                         <option>None</option>
                     </select>
                 </div>
@@ -18,10 +19,7 @@ export function renderRoundForm(players) {
                     <label class="form-label">Loser</label>
                     <select class="form-select">
                         <option selected>Select loser</option>
-                        <option>${players[0]}</option>
-                        <option>${players[1]}</option>
-                        <option>${players[2]}</option>
-                        <option>${players[3]}</option>
+                        ${options}
                         <option>Self-draw</option>
                     </select>
                 </div>

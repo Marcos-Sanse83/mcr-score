@@ -4,15 +4,28 @@ import { renderPlay } from './views/play.js'
 import { renderTablePoints } from './views/points.js'
 import { renderRounds } from './views/rounds.js'
 import { renderRules } from './views/rules.js'
+import { gameState } from './state/gameState.js';
 
-
-const app = document.querySelector('#app')
+const app = document.querySelector('#app');
 
 
 function navigate(page) {
 
     if (page === 'play') {
         app.innerHTML = renderPlay();
+        const startBtn = document.querySelector('#startGame');
+
+        startBtn.addEventListener('click', () => {
+
+        gameState.players = [
+            document.querySelector('#EastName').value,
+            document.querySelector('#SouthName').value,
+            document.querySelector('#WestName').value,
+            document.querySelector('#NorthName').value
+        ];
+        gameState.gameStarted = true;
+        navigate('play');
+        });
     }
 
     if (page === 'points') {
@@ -39,4 +52,3 @@ links.forEach(link => {
 });
 
 navigate('play');
-

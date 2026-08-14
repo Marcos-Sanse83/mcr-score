@@ -1,4 +1,6 @@
-export function renderPlayerCard(wind, image) {
+import { gameState } from '../state/gameState.js';
+
+export function renderPlayerCard(wind, image, player) {
     return `
     <div class="col-6 col-xl-3">
       <div class="row g-0 align-items-center">
@@ -6,7 +8,7 @@ export function renderPlayerCard(wind, image) {
           <img src="./public/img/${image}" class="img-fluid player-wind rounded-start" alt="${wind} tile">
         </div>
       <div class="col-8">
-            <input type="text" class="form-control" id="${wind}Name" placeholder="Player">
+            <input type="text" class="form-control" id="${wind}Name" value="${player}" ${gameState.gameStarted ? 'disabled' : ''} placeholder="Player">
       </div>
       </div>
     </div>

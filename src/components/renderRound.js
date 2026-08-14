@@ -1,4 +1,5 @@
 import { renderRoundForm } from '../components/roundForm.js';
+import { gameState } from '../state/gameState.js';
 
 export function renderRound(round) {
     return `
@@ -8,7 +9,7 @@ export function renderRound(round) {
             <h5 class="text-center">
             ${round < 5 ? `Prevalent wind EAST` : round < 9 ? `Prevalent wind SOUTH` : round < 13 ? `Prevalent wind WEST` : `Prevalent wind NORTH`}
             </h5>
-            ${renderRoundForm(['Ana','Marcos','Raquel','Raul'])}
+            ${renderRoundForm(gameState.players)}
           </div>
         </div>
        
